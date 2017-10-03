@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ConsoleApplication6A
 {
-    class Person
+    public class Person
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -20,7 +20,7 @@ namespace ConsoleApplication6A
 
 
     }
-    class Student : Person
+    public class Student : Person
     {
         public string RegNo { get; set; }
         public byte Age { get; set; }
