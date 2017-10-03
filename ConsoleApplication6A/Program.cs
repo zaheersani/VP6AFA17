@@ -6,6 +6,7 @@ namespace ConsoleApplication6A
     {
         static void Main(string[] args)
         {
+            // Creating student object using multi-argument constructor
             Student s1 = new Student("Ali", "Ahmad", "SP12-BCS-098", 22);
 
             // Another way of creating object using properties instead of multi-argument constructor
