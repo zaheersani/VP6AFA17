@@ -14,45 +14,37 @@ using System.Windows.Shapes;
 
 using ConsoleApplication6A;
 
-namespace WPF_App
+namespace WPF_FirstApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class StudentsGUI : Window
+    public partial class MainWindow : Window
     {
-        public StudentsGUI()
+        public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             Student sObj = new Student()
             {
-                FirstName = this.txt_fname.Text,
-                LastName = this.txt_lname.Text,
-                RegNo = this.txt_regno.Text,
-                Age = byte.Parse(this.comb_age.SelectedValue.ToString())
+                FirstName = this.txtFirstName.Text,
+                LastName = this.txtLastName.Text,
+                RegNo = this.txtRegNo.Text,
+                Age = byte.Parse(this.comboAge.SelectedItem.ToString())
             };
-
             MessageBox.Show(sObj.ToString());
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
 
         private void Window_Activated(object sender, EventArgs e)
         {
-            // Populating age combo box
             for (int i = 18; i < 30; i++)
-			{
-                this.comb_age.Items.Add(i);
-                
-			}
-            this.comb_age.SelectedItem = this.comb_age.Items[0];
+            {
+                this.comboAge.Items.Add(i);
+            }
         }
+
     }
 }
