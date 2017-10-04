@@ -28,6 +28,7 @@ namespace WPF_FirstApp
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
+            // Create a student object
             Student sObj = new Student()
             {
                 FirstName = this.txtFirstName.Text,
