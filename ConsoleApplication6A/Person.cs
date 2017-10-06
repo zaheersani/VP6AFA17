@@ -22,14 +22,14 @@ namespace ConsoleApplication6A
     }
     public class Student : Person
     {
-        public string RegNo { get; set; }
+        public RegNo RegNo { get; set; }
         public byte Age { get; set; }
         public DateTime DOB { get; set; }
 
         public Student()
             : base() { }
 
-        public Student(string FirstName, string LastName, string RegNo, byte Age)
+        public Student(string FirstName, string LastName, RegNo RegNo, byte Age)
             : base(FirstName, LastName)
         {
             this.RegNo = RegNo;
@@ -43,4 +43,22 @@ namespace ConsoleApplication6A
         }
     }
 
+    public enum ProgramCIIT { BCS, BSE, BTN, BEL }
+    public enum Batch { FA, SP }
+    public class RegNo
+    {
+        public Batch Batch { get; set; }
+        public ushort Year { get; set; }
+        public ProgramCIIT Program { get; set; }
+        public ushort RollNo { get; set; }
+
+        public RegNo(Batch batch, ushort year, ProgramCIIT program, ushort RollNo)
+        {
+            this.Batch = batch;
+            this.Year = year;
+            this.Program = program;
+            this.RollNo = RollNo;
+        }
+
+    }
 }

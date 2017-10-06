@@ -1,7 +1,7 @@
 ﻿<Window x:Class="WPF_FirstApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="First WPF App" Height="350" Width="525" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Activated="Window_Activated">
+        Title="First WPF App" Height="260.526" Width="284.211" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Activated="Window_Activated">
     <Grid>
         <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="92,148.631,0,0" VerticalAlignment="Top" Width="112.333" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" ToolTip="This is submit button" RenderTransformOrigin="0.5,0.5" FontFamily="Microsoft JhengHei Light" FontSize="20" Click="btnSubmit_Click"/>
         <Label Content="First Name:" HorizontalAlignment="Left" Margin="10,23.383,0,0" VerticalAlignment="Top" FontFamily="Microsoft JhengHei Light" FontSize="14"/>
@@ -11,7 +11,7 @@
         <Label Content="Reg No:" HorizontalAlignment="Left" Margin="10,82.051,0,0" VerticalAlignment="Top" FontFamily="Microsoft JhengHei Light" FontSize="14"/>
         <TextBox x:Name="txtRegNo" HorizontalAlignment="Left" Height="23" Margin="92,85.383,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="5,1,1,1" FontFamily="Microsoft JhengHei Light" FontSize="14"/>
         <Label Content="Age:" HorizontalAlignment="Left" Margin="10,110.051,0,0" VerticalAlignment="Top" FontFamily="Microsoft JhengHei Light" FontSize="14"/>
-        <ComboBox x:Name="comboAge" HorizontalAlignment="Left" Margin="92,113.383,0,0" VerticalAlignment="Top" Width="42.667" FontFamily="Microsoft JhengHei Light" FontSize="14"/>
+        <ComboBox x:Name="comboAge" HorizontalAlignment="Left" Margin="92,113.383,0,0" VerticalAlignment="Top" Width="42.667" FontFamily="Microsoft JhengHei Light" FontSize="14" SelectedIndex="0"/>
 
     </Grid>
 </Window>

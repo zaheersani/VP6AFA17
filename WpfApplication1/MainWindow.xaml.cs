@@ -24,18 +24,12 @@ namespace WPF_FirstApp
         public MainWindow()
         {
             InitializeComponent();
-            //MessageBoxResult result = MessageBoxResult.;
-            if (MessageBoxResult.Yes == MessageBox.Show("Welcome to BCS-6A", "Welcome", MessageBoxButton.YesNoCancel, MessageBoxImage.Information, MessageBoxResult.Yes, MessageBoxOptions.DefaultDesktopOnly))
-                MessageBox.Show("Thank you for pressing yes");
         }
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             RegNo rObj = new RegNo(Batch.SP, 2015, ProgramCIIT.BCS, 34);
-            if(rObj.Program == ProgramCIIT.BCS)
-                MessageBox.Show("Welcome to BCS-6A","Welcome",MessageBoxButton.YesNoCancel,MessageBoxImage.Information,MessageBoxResult.Yes,MessageBoxOptions.DefaultDesktopOnly);
-            else
-                MessageBox.Show("Why are you here?");
+            MessageBox.Show(rObj.Program.ToString());
             // Create a student object
             Student sObj = new Student()
             {
