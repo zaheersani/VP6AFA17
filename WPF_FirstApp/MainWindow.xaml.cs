@@ -24,16 +24,39 @@ namespace WPF_FirstApp
         public MainWindow()
         {
             InitializeComponent();
-            //MessageBoxResult result = MessageBoxResult.;
-            if (MessageBoxResult.Yes == MessageBox.Show("Welcome to BCS-6A", "Welcome", MessageBoxButton.YesNoCancel, MessageBoxImage.Information, MessageBoxResult.Yes, MessageBoxOptions.DefaultDesktopOnly))
-                MessageBox.Show("Thank you for pressing yes");
+
+            Box b1 = new Box()
+            {
+                Length = 5,
+                Breadth = 5,
+                Height = 5
+            };
+            Box b2 = new Box()
+            {
+                Length = 5,
+                Breadth = 5,
+                Height = 5
+            };
+
+            Box result = b1 + b2;
+            string output = "Vol B1: " + b1.getVolume() +
+                "\nVol B2: " + b2.getVolume() +
+                "\nVol B3: " + result.getVolume();
+
+            MessageBox.Show(output);
+
+
+            //RegNo rObj1 = new RegNo(Batch.SP, 2015, ProgramCIIT.BCS, 34);
+            //RegNo rObj2 = new RegNo(Batch.FA, 2015, ProgramCIIT.BCS, 34);
+            //if (rObj1 != rObj2)
+            //    MessageBox.Show("Reg1 and Reg2 are NOT equal");
         }
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             RegNo rObj = new RegNo(Batch.SP, 2015, ProgramCIIT.BCS, 34);
-            if(rObj.Program == ProgramCIIT.BCS)
-                MessageBox.Show("Welcome to BCS-6A","Welcome",MessageBoxButton.YesNoCancel,MessageBoxImage.Information,MessageBoxResult.Yes,MessageBoxOptions.DefaultDesktopOnly);
+            if (rObj.Program == ProgramCIIT.BCS)
+                MessageBox.Show("Welcome to BCS-6A", "Welcome", MessageBoxButton.YesNoCancel, MessageBoxImage.Information, MessageBoxResult.Yes, MessageBoxOptions.DefaultDesktopOnly);
             else
                 MessageBox.Show("Why are you here?");
             // Create a student object
