@@ -1,0 +1,25 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WPF_FirstApp.CommonControls1"
+        Title="CommonControls1" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Height="81" Margin="0,0.348,0,0" VerticalAlignment="Top" Fill="#FF5B5BE2"/>
+        <CheckBox x:Name="check1" Content="CheckBox" HorizontalAlignment="Left" Margin="7,6.5,0,0" VerticalAlignment="Top" Height="15.098" Width="71.395"/>
+        <CheckBox x:Name="check2" Content="CheckBox" HorizontalAlignment="Left" Margin="7,21.598,0,0" VerticalAlignment="Top" Height="15.098" Width="71.395"/>
+        <CheckBox x:Name="check3" Content="CheckBox" HorizontalAlignment="Left" Margin="7,36.696,0,0" VerticalAlignment="Top" Height="15.098" Width="71.395"/>
+        <ComboBox x:Name="comboStudent" HorizontalAlignment="Left" Margin="80.895,10,0,0" VerticalAlignment="Top" Width="78.25" SelectionChanged="comboStudent_SelectionChanged" Height="21.96"/>
+        <Image HorizontalAlignment="Left" Height="64.75" Margin="168.145,10,0,0" VerticalAlignment="Top" Width="70" Source="QR_Code_My_Facebook_Code.png"/>
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="0,81.348,0,0" VerticalAlignment="Top" Width="103.25">
+            <CheckBox x:Name="check3_Copy" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="87.5"/>
+            <Button Content="Button" Width="48.75"/>
+        </ListBox>
+        <RadioButton Content="" HorizontalAlignment="Left" Margin="108.25,86.348,0,0" VerticalAlignment="Top" Height="14.96" Width="84.91"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="108.25,101.308,0,0" VerticalAlignment="Top" Height="14.96" Width="84.91"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="108.25,116.268,0,0" VerticalAlignment="Top" Height="14.96" Width="84.91"/>
+    </Grid>
+</Window>

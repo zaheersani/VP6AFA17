@@ -1,0 +1,58 @@
+﻿<Window x:Class="WPF_FirstApp.CommonControls2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CommonControls2" Height="300" Width="300">
+    <Grid>
+        <Menu HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="292">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New File" HorizontalAlignment="Left" Width="137" Click="MenuItem_Click"/>
+                <MenuItem Header="_Open File" HorizontalAlignment="Left" Width="137"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Cut" HorizontalAlignment="Left" Width="137"/>
+                <MenuItem Header="Co_py" HorizontalAlignment="Left" Width="137"/>
+                <MenuItem Header="_Paste" HorizontalAlignment="Left" Width="137"/>
+            </MenuItem>
+        </Menu>
+        <ToolBarPanel Height="53.333" Margin="0,24,0,0" VerticalAlignment="Top">
+            <ToolBar Height="24.333" Margin="0,0,10,0">
+                <Button Content="New File"/>
+                <Button Content="Open"/>
+                <Button Content="Save"/>
+            </ToolBar>
+            <ToolBar HorizontalAlignment="Left" Width="282" Height="24.333">
+                <Button Content="New File"/>
+                <Button Content="Open"/>
+                <Button Content="Save"/>
+            </ToolBar>
+        </ToolBarPanel>
+        <ProgressBar x:Name="progbar" HorizontalAlignment="Left" Height="15" Margin="0,254,0,0" VerticalAlignment="Top" Width="292" Value="45"/>
+        <TabControl Margin="0,82,0,17">
+            <TabItem Header="Tab1">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tab2">
+                <Grid Background="#FFE5E5E5">
+                    <ListBox HorizontalAlignment="Left" Height="90" Margin="18,3,0,0" VerticalAlignment="Top" Width="90"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tab 3" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                <Grid Background="#FFE5E5E5">
+                    <Calendar HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" DisplayMode="Decade" FirstDayOfWeek="Monday" SelectionMode="SingleRange"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                <Grid Background="#FFE5E5E5">
+                    <WrapPanel HorizontalAlignment="Left" Height="44" Margin="0,10,0,0" VerticalAlignment="Top" Width="276">
+                        <Button Content="Button" Width="75"/>
+                        <DatePicker/>
+                        <ComboBox Width="95"/>
+                    </WrapPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

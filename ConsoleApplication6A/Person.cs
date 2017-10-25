@@ -69,6 +69,8 @@ namespace ConsoleApplication6A
             string name = "Name: " + this.FirstName + " " + this.LastName;
             return name + "\n" + "RegNo: " + this.RegNo + "\n" + "Age: " + this.Age + " years";
         }
+
+
     }
 
     public enum ProgramCIIT { BCS, BSE, BTN, BEL }
@@ -106,6 +108,10 @@ namespace ConsoleApplication6A
             return !rObj1.IsEqual(rObj2);
         }
 
+        public override string ToString()
+        {
+            return this.Batch.ToString() + this.Year % 2000 + "-" + this.Program.ToString() + "-" + this.RollNo;
+        }
     }
 
     public class Box
@@ -118,6 +124,7 @@ namespace ConsoleApplication6A
         {
             return this.Length * this.Breadth * this.Height;
         }
+        
 
         public static Box operator +(Box b1, Box b2)
         {
@@ -127,6 +134,8 @@ namespace ConsoleApplication6A
             b.Height = b1.Height + b2.Height;
             return b;
         }
-    }
 
+        //TODO: Overload <, >, >=, <=, - operators
+
+    }
 }
