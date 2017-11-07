@@ -76,6 +76,7 @@ namespace ConsoleApplication6A
         {
             get
             {
+                
                 for (int i = 0; i < count; i++)
                 {
                     if (this.Numbers[i] == number)
