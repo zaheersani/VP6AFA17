@@ -25,7 +25,7 @@ namespace ConsoleApplication6A
 
                 for (int i = 0; i < strText.Length; i++)
                 {
-                    letter = strText.Substring(i, 1);
+                    letter = strText.Substring(1, 1);
 
                     if (letter == letterToCount)
                         LetterCount++;
