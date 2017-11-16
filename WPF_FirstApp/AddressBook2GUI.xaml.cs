@@ -60,11 +60,11 @@ namespace WpfApplication1
         }
     }
 
-    //class Contact
-    //{
-    //    public string Name { get; set; }
-    //    public ImageSource Photo { get; set; }
-    //}
+    class Contact
+    {
+        public string Name { get; set; }
+        public ImageSource Photo { get; set; }
+    }
 
 }
 
