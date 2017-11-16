@@ -38,7 +38,7 @@
     <ApplicationIcon>X.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ConsoleApplication6A.LINQExamplescs</StartupObject>
+    <StartupObject>ConsoleApplication6A.LINQExamples</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="Car.cs" />
     <Compile Include="Debugging.cs" />
-    <Compile Include="LINQExamplescs.cs" />
+    <Compile Include="LINQExamples.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PhoneBook.cs" />
     <Compile Include="Program.cs" />

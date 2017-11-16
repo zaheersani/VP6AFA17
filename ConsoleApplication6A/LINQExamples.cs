@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication6A
 {
-    class LINQExamplescs
+    class LINQExamples
     {
         static void Main()
         {
