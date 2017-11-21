@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfApplication1.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window2" Height="300" Width="300">
+    <Grid>
+        <Rectangle Fill="#FF7B7BDA" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="292"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="75"/>
+        <CheckBox x:Name="check1" Content="CheckBox" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="check2" Content="CheckBox" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboCity" HorizontalAlignment="Left" Margin="95,5,0,0" VerticalAlignment="Top" Width="65" Height="20"/>
+        <ListBox x:Name="listbox" HorizontalAlignment="Left" Height="128" Margin="175,5,0,0" VerticalAlignment="Top" Width="117">
+            <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="100"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="100"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="100"/>
+        </ListBox>
+        <ListBox x:Name="listboxS" Margin="0,78,175,107" MinWidth="117" MouseDoubleClick="listboxS_MouseDoubleClick"/>
+    </Grid>
+</Window>
