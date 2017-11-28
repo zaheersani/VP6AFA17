@@ -33,6 +33,9 @@ namespace WPF_FirstApp
     partial void InsertEmployee(Employee instance);
     partial void UpdateEmployee(Employee instance);
     partial void DeleteEmployee(Employee instance);
+    partial void InsertTask(Task instance);
+    partial void UpdateTask(Task instance);
+    partial void DeleteTask(Task instance);
     partial void InsertEmpTask(EmpTask instance);
     partial void UpdateEmpTask(EmpTask instance);
     partial void DeleteEmpTask(EmpTask instance);
@@ -76,6 +79,14 @@ namespace WPF_FirstApp
 			}
 		}
 		
+		public System.Data.Linq.Table<Task> Tasks
+		{
+			get
+			{
+				return this.GetTable<Task>();
+			}
+		}
+		
 		public System.Data.Linq.Table<EmpTask> EmpTasks
 		{
 			get
@@ -101,6 +112,8 @@ namespace WPF_FirstApp
 		
 		private string _Address;
 		
+		private EntitySet<EmpTask> _EmpTasks;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -119,6 +132,7 @@ namespace WPF_FirstApp
 		
 		public Employee()
 		{
+			this._EmpTasks = new EntitySet<EmpTask>(new Action<EmpTask>(this.attach_EmpTasks), new Action<EmpTask>(this.detach_EmpTasks));
 			OnCreated();
 		}
 		
@@ -222,6 +236,19 @@ namespace WPF_FirstApp
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_EmpTask", Storage="_EmpTasks", ThisKey="Id", OtherKey="EmpID")]
+		public EntitySet<EmpTask> EmpTasks
+		{
+			get
+			{
+				return this._EmpTasks;
+			}
+			set
+			{
+				this._EmpTasks.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -241,10 +268,22 @@ namespace WPF_FirstApp
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_EmpTasks(EmpTask entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = this;
+		}
+		
+		private void detach_EmpTasks(EmpTask entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = null;
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EmpTasks")]
-	public partial class EmpTask : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Task")]
+	public partial class Task : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -254,6 +293,8 @@ namespace WPF_FirstApp
 		private System.Nullable<int> _Code;
 		
 		private string _Description;
+		
+		private EntitySet<EmpTask> _EmpTasks;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -267,8 +308,9 @@ namespace WPF_FirstApp
     partial void OnDescriptionChanged();
     #endregion
 		
-		public EmpTask()
+		public Task()
 		{
+			this._EmpTasks = new EntitySet<EmpTask>(new Action<EmpTask>(this.attach_EmpTasks), new Action<EmpTask>(this.detach_EmpTasks));
 			OnCreated();
 		}
 		
@@ -328,6 +370,223 @@ namespace WPF_FirstApp
 					this._Description = value;
 					this.SendPropertyChanged("Description");
 					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Task_EmpTask", Storage="_EmpTasks", ThisKey="Id", OtherKey="TaskID")]
+		public EntitySet<EmpTask> EmpTasks
+		{
+			get
+			{
+				return this._EmpTasks;
+			}
+			set
+			{
+				this._EmpTasks.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_EmpTasks(EmpTask entity)
+		{
+			this.SendPropertyChanging();
+			entity.Task = this;
+		}
+		
+		private void detach_EmpTasks(EmpTask entity)
+		{
+			this.SendPropertyChanging();
+			entity.Task = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EmpTask")]
+	public partial class EmpTask : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _EmpID;
+		
+		private int _TaskID;
+		
+		private EntityRef<Employee> _Employee;
+		
+		private EntityRef<Task> _Task;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnEmpIDChanging(int value);
+    partial void OnEmpIDChanged();
+    partial void OnTaskIDChanging(int value);
+    partial void OnTaskIDChanged();
+    #endregion
+		
+		public EmpTask()
+		{
+			this._Employee = default(EntityRef<Employee>);
+			this._Task = default(EntityRef<Task>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpID", DbType="Int NOT NULL")]
+		public int EmpID
+		{
+			get
+			{
+				return this._EmpID;
+			}
+			set
+			{
+				if ((this._EmpID != value))
+				{
+					if (this._Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmpIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmpID = value;
+					this.SendPropertyChanged("EmpID");
+					this.OnEmpIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskID", DbType="Int NOT NULL")]
+		public int TaskID
+		{
+			get
+			{
+				return this._TaskID;
+			}
+			set
+			{
+				if ((this._TaskID != value))
+				{
+					if (this._Task.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTaskIDChanging(value);
+					this.SendPropertyChanging();
+					this._TaskID = value;
+					this.SendPropertyChanged("TaskID");
+					this.OnTaskIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_EmpTask", Storage="_Employee", ThisKey="EmpID", OtherKey="Id", IsForeignKey=true)]
+		public Employee Employee
+		{
+			get
+			{
+				return this._Employee.Entity;
+			}
+			set
+			{
+				Employee previousValue = this._Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Employee.Entity = null;
+						previousValue.EmpTasks.Remove(this);
+					}
+					this._Employee.Entity = value;
+					if ((value != null))
+					{
+						value.EmpTasks.Add(this);
+						this._EmpID = value.Id;
+					}
+					else
+					{
+						this._EmpID = default(int);
+					}
+					this.SendPropertyChanged("Employee");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Task_EmpTask", Storage="_Task", ThisKey="TaskID", OtherKey="Id", IsForeignKey=true)]
+		public Task Task
+		{
+			get
+			{
+				return this._Task.Entity;
+			}
+			set
+			{
+				Task previousValue = this._Task.Entity;
+				if (((previousValue != value) 
+							|| (this._Task.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Task.Entity = null;
+						previousValue.EmpTasks.Remove(this);
+					}
+					this._Task.Entity = value;
+					if ((value != null))
+					{
+						value.EmpTasks.Add(this);
+						this._TaskID = value.Id;
+					}
+					else
+					{
+						this._TaskID = default(int);
+					}
+					this.SendPropertyChanged("Task");
 				}
 			}
 		}

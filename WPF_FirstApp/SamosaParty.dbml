@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SamosaFineMS" Class="SamosaPartyDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SMILE-PC\MSSQLSERVERSMILE;Initial Catalog=SamosaFineMS;Integrated Security=True" SettingsObjectName="WPF_FirstApp.Properties.Settings" SettingsPropertyName="SamosaFineMSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Penalty" Member="Penalties">
+    <Type Name="Penalty">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FineAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Paid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Association Name="Penalty_StudentPenalty" Member="StudentPenalties" ThisKey="ID" OtherKey="Penalties" Type="StudentPenalty" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StudentPenalties" Member="StudentPenalties">
+    <Type Name="StudentPenalty">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Penalties" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Penalty_StudentPenalty" Member="Penalty" ThisKey="Penalties" OtherKey="ID" Type="Penalty" IsForeignKey="true" />
+      <Association Name="Student_StudentPenalty" Member="Student" ThisKey="StudentID" OtherKey="Id" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RegNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Student_StudentPenalty" Member="StudentPenalties" ThisKey="Id" OtherKey="StudentID" Type="StudentPenalty" />
+    </Type>
+  </Table>
+</Database>

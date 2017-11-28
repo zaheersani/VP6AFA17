@@ -24,26 +24,26 @@ namespace WPF_FirstApp
         {
             InitializeComponent();
 
-            PhoneBook2 pb2 = new PhoneBook2();
-            pb2.Add("new contact","0333302342");
-            this.listPhoneBook.ItemsSource = pb2.toList();
+            //PhoneBook2 pb2 = new PhoneBook2();
+            //pb2.Add("new contact","0333302342");
+            //this.listPhoneBook.ItemsSource = pb2.toList();
 
-            Student s1 = new Student()
-            {
-                RegNo = new RegNo(Batch.FA,2010,ProgramCIIT.BCS,123)
-            };
-            Student s2 = new Student()
-            {
-                RegNo = new RegNo(Batch.FA, 2011, ProgramCIIT.BCS, 12)
-            };
+            //Student s1 = new Student()
+            //{
+            //    RegNo = new RegNo(Batch.FA,2010,ProgramCIIT.BCS,123)
+            //};
+            //Student s2 = new Student()
+            //{
+            //    RegNo = new RegNo(Batch.FA, 2011, ProgramCIIT.BCS, 12)
+            //};
 
-            List<Student> slist = new List<Student>();
-            slist.Add(s1);
-            slist.Add(s2);
-            slist.Add(new Student()
-            {
-                RegNo = new RegNo(Batch.FA, 2012, ProgramCIIT.BCS, 12)
-            });
+            //List<Student> slist = new List<Student>();
+            //slist.Add(s1);
+            //slist.Add(s2);
+            //slist.Add(new Student()
+            //{
+            //    RegNo = new RegNo(Batch.FA, 2012, ProgramCIIT.BCS, 12)
+            //});
 
         }
 

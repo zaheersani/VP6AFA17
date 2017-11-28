@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SamosaParty">
+  <DataContextMoniker Name="/SamosaPartyDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3df13be9-01bc-4893-b1a6-c3c9a9d9b666" absoluteBounds="0.75, 3.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SamosaPartyDataContext/Penalty" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d32e0f21-533c-4349-86e2-d396dd6f1e2f" absoluteBounds="0.765, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="60743efd-dd39-413e-b4ec-969081adab43" absoluteBounds="3.5, 0.875, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/SamosaPartyDataContext/StudentPenalty" />
+      <nestedChildShapes>
+        <elementListCompartment Id="674f434b-2e59-4322-9147-af63c96d7aec" absoluteBounds="3.515, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f50a4899-63c4-4915-830a-6c2e1c526b6d" absoluteBounds="0.75, 0.875, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/SamosaPartyDataContext/Student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d90aa50-7502-4bbf-9f6c-b127abb15fd9" absoluteBounds="0.765, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.53929768880208); (4.5 : 4.53929768880208); (4.5 : 2.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SamosaPartyDataContext/Penalty/Penalty_StudentPenalty" />
+      <nodes>
+        <classShapeMoniker Id="3df13be9-01bc-4893-b1a6-c3c9a9d9b666" />
+        <classShapeMoniker Id="60743efd-dd39-413e-b4ec-969081adab43" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.56814697265625); (3.5 : 1.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SamosaPartyDataContext/Student/Student_StudentPenalty" />
+      <nodes>
+        <classShapeMoniker Id="f50a4899-63c4-4915-830a-6c2e1c526b6d" />
+        <classShapeMoniker Id="60743efd-dd39-413e-b4ec-969081adab43" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

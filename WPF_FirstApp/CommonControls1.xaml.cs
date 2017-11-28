@@ -23,22 +23,22 @@ namespace WPF_FirstApp
         public CommonControls1()
         {
             InitializeComponent();
-            Student sOBj = new Student() {
-                FirstName = "Jahanzaib",
-                LastName = "Ahmad",
-                RegNo = new RegNo(Batch.FA,2010,ProgramCIIT.BCS,123),
-                Age = 19
-            };
-            this.comboStudent.Items.Add(sOBj);
-            Student sOBj2 = new Student()
-            {
-                FirstName = "Ahmad",
-                LastName = "Raza",
-                RegNo = new RegNo(Batch.FA, 2013, ProgramCIIT.BSE, 90),
-                Age = 19
-            };
-            this.comboStudent.Items.Add(sOBj2);
-            this.comboStudent.DisplayMemberPath = "RegNo";
+            //Student sOBj = new Student() {
+            //    FirstName = "Jahanzaib",
+            //    LastName = "Ahmad",
+            //    RegNo = new RegNo(Batch.FA,2010,ProgramCIIT.BCS,123),
+            //    Age = 19
+            //};
+            //this.comboStudent.Items.Add(sOBj);
+            //Student sOBj2 = new Student()
+            //{
+            //    FirstName = "Ahmad",
+            //    LastName = "Raza",
+            //    RegNo = new RegNo(Batch.FA, 2013, ProgramCIIT.BSE, 90),
+            //    Age = 19
+            //};
+            //this.comboStudent.Items.Add(sOBj2);
+            //this.comboStudent.DisplayMemberPath = "RegNo";
         }
 
         private void comboStudent_SelectionChanged(object sender, SelectionChangedEventArgs e)

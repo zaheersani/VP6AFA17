@@ -27,7 +27,7 @@ namespace WPF_FirstApp
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            var t = Task.Run(() =>
+            var t = System.Threading.Tasks.Task.Run(() =>
             {
                 for (int i = 0; i <= 100; i++)
                 {

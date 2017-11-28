@@ -54,20 +54,20 @@ namespace WPF_FirstApp
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            RegNo rObj = new RegNo(Batch.SP, 2015, ProgramCIIT.BCS, 34);
-            if (rObj.Program == ProgramCIIT.BCS)
-                MessageBox.Show("Welcome to BCS-6A", "Welcome", MessageBoxButton.YesNoCancel, MessageBoxImage.Information, MessageBoxResult.Yes, MessageBoxOptions.DefaultDesktopOnly);
-            else
-                MessageBox.Show("Why are you here?");
-            // Create a student object
-            Student sObj = new Student()
-            {
-                FirstName = this.txtFirstName.Text,
-                LastName = this.txtLastName.Text,
-                //RegNo = this.txtRegNo.Text,
-                Age = byte.Parse(this.comboAge.SelectedItem.ToString())
-            };
-            MessageBox.Show(sObj.ToString());
+            //RegNo rObj = new RegNo(Batch.SP, 2015, ProgramCIIT.BCS, 34);
+            //if (rObj.Program == ProgramCIIT.BCS)
+            //    MessageBox.Show("Welcome to BCS-6A", "Welcome", MessageBoxButton.YesNoCancel, MessageBoxImage.Information, MessageBoxResult.Yes, MessageBoxOptions.DefaultDesktopOnly);
+            //else
+            //    MessageBox.Show("Why are you here?");
+            //// Create a student object
+            //Student sObj = new Student()
+            //{
+            //    FirstName = this.txtFirstName.Text,
+            //    LastName = this.txtLastName.Text,
+            //    //RegNo = this.txtRegNo.Text,
+            //    Age = byte.Parse(this.comboAge.SelectedItem.ToString())
+            //};
+            //MessageBox.Show(sObj.ToString());
         }
 
         private void Window_Activated(object sender, EventArgs e)

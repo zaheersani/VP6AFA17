@@ -7,13 +7,24 @@
       <Column Name="Designation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Salary" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Address" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="Employee_EmpTask" Member="EmpTasks" ThisKey="Id" OtherKey="EmpID" Type="EmpTask" />
     </Type>
   </Table>
-  <Table Name="dbo.EmpTasks" Member="EmpTasks">
-    <Type Name="EmpTask">
+  <Table Name="dbo.Task" Member="Tasks">
+    <Type Name="Task">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Association Name="Task_EmpTask" Member="EmpTasks" ThisKey="Id" OtherKey="TaskID" Type="EmpTask" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmpTask" Member="EmpTasks">
+    <Type Name="EmpTask">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TaskID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Employee_EmpTask" Member="Employee" ThisKey="EmpID" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Task_EmpTask" Member="Task" ThisKey="TaskID" OtherKey="Id" Type="Task" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

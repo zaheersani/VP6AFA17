@@ -69,6 +69,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SamosaParty.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SamosaParty.dbml</DependentUpon>
+    </Compile>
     <Page Include="AddressBook2GUI.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -136,6 +141,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SamosaParty.dbml.layout">
+      <DependentUpon>SamosaParty.dbml</DependentUpon>
+    </None>
     <None Include="EmployeeDataClasses.dbml.layout">
       <DependentUpon>EmployeeDataClasses.dbml</DependentUpon>
     </None>
@@ -154,6 +162,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="SamosaParty.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SamosaParty.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsoleApplication6A\ConsoleApplication6A.csproj">

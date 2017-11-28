@@ -33,5 +33,16 @@ namespace WPF_FirstApp.Properties {
                 return ((string)(this["EmployeeDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SMILE-PC\\MSSQLSERVERSMILE;Initial Catalog=SamosaFineMS;Integrated Sec" +
+            "urity=True")]
+        public string SamosaFineMSConnectionString {
+            get {
+                return ((string)(this["SamosaFineMSConnectionString"]));
+            }
+        }
     }
 }
